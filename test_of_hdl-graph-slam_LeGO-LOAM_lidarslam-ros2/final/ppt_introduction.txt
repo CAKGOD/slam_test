@@ -1,0 +1,49 @@
+steve你好，我是Ankang Chu。我负责的是hdl_graph_slam和lidarslam_ros2两个框架的测试。我首先在虚拟机里安装了两个框架，跑通demo后迁移到了云服务器上。现在我对最近的工作任务进行一个分享。
+Hi steve, I am Ankang Chu. I am responsible for the testing of the two frameworks hdl_graph_slam and lidarslam_ros2. I first installed two frameworks in the virtualbox, and then migrated them to the cloud server after running the tutorial demo. Now I am going to share my recent work.
+
+首先介绍一下整体的开发环境和测试流程。开发基于安装了ros1 Melodic 和 ros2 eloquent 的ubuntu 18.04 。它对于三个框架都是支持的。然后介绍一下硬件环境，较早的开发在个人笔记本的虚拟机中，我的笔记本是十代i7cpu和16GB内存。分配给虚拟机3个核心和8GB的内存。之后迁移到具有16U和32GB内存的云服务器上。
+First introduce the development environment and testing process. Development is based on ubuntu 18.04 with ros1 Melodic and ros2 eloquent installed. It supports all three frameworks. Then introduce the hardware environment. The earlier development was in the virtual machine of personal notebook. My notebook has a tenth generation i7cpu and 16GB memory. The virtual machine was given 3 cores and 8GB memory. Then they are migrated to a cloud server with 16U and 32GB memory.
+
+我们使用的数据集是Stevens数据集和KITTI数据集。他们都是自动驾驶中比较常见的数据集，我们使用它们中雷达数据。
+The datasets we use are Stevens dataset and KITTI dataset. They are relatively common data sets in autonomous driving。 We use the lidar data in them.
+
+最后介绍一下测试的两个部分。第一部分是测试框架对于硬件的使用情况，记录下他们在相同数据集和硬件设备下的cpu和内存使用情况。第二部分是将框架建图过程中的轨迹和groudtruth进行对比来测试slam的性能。
+Finally, I will introduce the two parts of the test. The first part is the hardware usage of the test framework, recording their cpu and memory usage under the same dataset and hardware environment. The second part is testing the performance of slam by comparing the trajectory in the process with the groudtruth of dataset.
+
+简单介绍一下两个框架。第一个框架是hdl_graph_slam。
+Briefly introduce the two frameworks. The first framework is hdl_graph_slam.
+
+读ppt。
+
+它的结构如图所示。
+Its structure is shown in the figure.
+
+第二个框架是lidarslam_ros2。
+The second frame is lidarslam_ros2.
+
+读ppt。
+
+它的结构如图所示。两者的结构比较相似。
+Its structure is shown in the figure. The structures of the two framworks  are relatively similar.
+
+下面对测试结果进行介绍。首先介绍对于cpu和memory的测试结果。首先使用了比较小的kitti数据集进行了测试。可以看到，第二个框架对于CPU的使用率远小于第一个框架，而内存的使用率要高一点点。
+The test results are introduced below. First introduce the test results for cpu and memory. First, a relatively simple kitti dataset was used for testing. It can be seen that the CPU usage of the second framework is much lower than that of the first framework, while the memory usage is a little bit higher.
+
+之后我们使用了更大的Stenvens数据集进行了测试，记录了更长时间和更多的信息。结果更加说明了这一点。
+After that, we used a larger Stenvens dataset for testing, recording a longer time and more information. The results further illustrate this point.
+
+说明两个框架具有不同的设计理念。
+Explain that the two frameworks have different design concepts.
+
+下面介绍trajectory对比。通过ros记录下了整个过程中的slam轨迹，并将它与官方提供的groundtruth进行对比。使用了evo工具进行了绘图和计算。
+The following describes trajectory comparison. The slam trajectory in the whole process was recorded through ros and compared with the official groundtruth. The evo tool was used for drawing and calculation.
+
+第一张图片可以看到两个轨迹基本吻合，肉眼无法看出区别。第二张可以从三个坐标轴上看出差异程度。可以看到在y轴的偏移量相对较大。
+In the first figure, you can see that the two trajectories are basically the same, and the difference cannot be seen with the naked eye. The second one can see the degree of difference from the three coordinate axes. It can be seen that the offset on the y axis is relatively large.
+
+由于KITTI数据集昨天刚刚下载完成，第二个框架现在还没有测试完成，预计今天可以得到结果。之后我会对它们进行对比并同步到slack上。整个过程中对于我来说比较难的地方是调整框架中的参数来使框架成功运行起来。
+Since the KITTI dataset has just been downloaded yesterday, the second framework has not been tested yet, and the results are expected to be available today. Then I will compare them and sync them to slack. The most difficult part for me in the whole process is to adjust the parameters in the framework to make the framework run successfully.
+
+这是我的分享，谢谢！
+This is my sharing, thank you!
+
