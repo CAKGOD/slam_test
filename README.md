@@ -1,4 +1,5 @@
 # SLAM_EVALUTION
+(WIP)
 
 **This is repository about SLAM evalution. There are some [codes](https://github.com/CAKGOD/slam_test/tree/master/codes) and [reports](https://github.com/CAKGOD/slam_test/tree/master/reports).**
 
@@ -18,7 +19,9 @@ To evalute the simultaneous localization ability, the 3D slam dataset with groud
 
 To evalute the hardware resource usage of SLAM, the usages of hardwares including cpu and memory need to be considered. 
 
-## SLAM frameworks
+## SLAM frameworks  
+
+We have test some SLAM frameworks based on ROS1 or ROS2. They are shown below. We will keep looking for new SLAM frameworks and test them.
 
 - [hdl_graph_slam](https://github.com/koide3/hdl_graph_slam)
 
@@ -34,9 +37,7 @@ To evalute the hardware resource usage of SLAM, the usages of hardwares includin
 
 ## Evalution codes
 
-Data used for slam evalution contains hardware resource usages and trajectory offsets.  
-To get these data, we use "top" command to get the cpu & memory usages and "rosbag record" command to get the rosbag file contains trajectory offset values.  
-We wrote a automatic evalution script in Python which you can find it [here](https://github.com/CAKGOD/slam_test/tree/master/codes).
+Data used for slam evalution contains hardware resource usages and trajectory offsets. To get these data, we use "top" command to get the cpu & memory usages and "rosbag record" command to get the rosbag file contains trajectory offset values. We wrote a automatic evalution script in Python which you can find it [here](https://github.com/CAKGOD/slam_test/tree/master/codes).
 
 ## Related package
 
@@ -44,4 +45,16 @@ We wrote a automatic evalution script in Python which you can find it [here](htt
 
 ## Evalution reports
 
+We have test some frameworks and write some evalution reports about them.
+
 - [evalution reports]((https://github.com/CAKGOD/slam_test/tree/master/reports))
+
+## TODO
+
+There are still some things to do. 
+
+- Improve the codes and tell you how to use it.
+
+- Integrate the reports in a complete report.
+
+- Make a comparison table to help you make a clear choice of SLAM frameworks.
