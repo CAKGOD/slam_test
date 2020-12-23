@@ -3,13 +3,20 @@
 **This is repository about SLAM evalution. There are some [codes](https://github.com/CAKGOD/slam_test/tree/master/codes) and [reports](https://github.com/CAKGOD/slam_test/tree/master/reports).**
 
 ## Evaluation method
+
 We consider the working principle and application scenarios of SLAM. Three dimensions are used to evaluate SLAM more comprehensively.
 
 - Visual mapping effect
 
+Since we have not found a good method to evaluate the mapping effort, we can only view the 3D maps with naked eyes.
+
 - Simultaneous localization ability
 
+To evalute the simultaneous localization ability, the 3D slam dataset with groudtruth can be used. We can record the topics contain trajecroty data and then compare them with the standard data provided by groundtruth. Some tools like [evo tool](https://github.com/MichaelGrupp/evo) can help us to achieve this function.
+
 - Hardware resource usage
+
+To evalute the hardware resource usage of SLAM, the usages of hardwares including cpu and memory need to be considered. 
 
 ## SLAM frameworks
 
@@ -27,12 +34,14 @@ We consider the working principle and application scenarios of SLAM. Three dimen
 
 ## Evalution codes
 
-
+Data used for slam evalution contains hardware resource usages and trajectory offsets.  
+To get these data, we use "top" command to get the cpu & memory usages and "rosbag record" command to get the rosbag file contains trajectory offset values.  
+We wrote a automatic evalution script in Python which you can find it [here](https://github.com/CAKGOD/slam_test/tree/master/codes).
 
 ## Related package
 
--[evo tools](https://github.com/MichaelGrupp/evo)
+- [evo tool](https://github.com/MichaelGrupp/evo)
 
 ## Evalution reports
 
--[evalution reports]((https://github.com/CAKGOD/slam_test/tree/master/reports))
+- [evalution reports]((https://github.com/CAKGOD/slam_test/tree/master/reports))
